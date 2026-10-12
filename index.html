@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dhellskieee · Video to MP3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <span class="logo">dhellskieee<span class="dim">.dev</span></span>
+    <span class="dim mono">video → mp3</span>
+  </header>
+
+  <main class="app">
+    <h1>Video to MP3</h1>
+    <p class="sub">Drop a video, get an MP3. Everything runs in your browser — nothing is uploaded.</p>
+
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose video files">
+      <input id="file" type="file" accept="video/*,audio/*" multiple hidden>
+      <strong>Drop video here</strong>
+      <span class="dim">or click to browse · MP4, WEBM, MOV, MKV, M4A…</span>
+    </div>
+
+    <div class="opts">
+      <label for="kbps" class="dim mono">bitrate</label>
+      <select id="kbps">
+        <option value="128">128 kbps</option>
+        <option value="192" selected>192 kbps</option>
+        <option value="256">256 kbps</option>
+        <option value="320">320 kbps</option>
+      </select>
+      <button id="clear" class="ghost" type="button" hidden>clear all</button>
+    </div>
+
+    <ul id="list" class="list"></ul>
+  </main>
+
+  <footer class="foot dim mono">~/ dhellskieee : malupet na hacker</footer>
+
+  <!-- MP3 encoder (local file, no internet needed) -->
+  <script src="lame.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
